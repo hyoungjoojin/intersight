@@ -7,6 +7,16 @@ template <typename T> Vector3d<T>::Vector3d() : x_(0), y_(0), z_(0) {}
 template <typename T>
 Vector3d<T>::Vector3d(T x, T y, T z) : x_(x), y_(y), z_(z) {}
 
+template <typename T>
+Vector3d<T> Vector3d<T>::operator+(Vector3d<T> &vector) const {
+  return Vector3d(x_ + vector.x_, y_ + vector.y_, z_ + vector.z_);
+}
+
+template <typename T>
+Vector3d<T> Vector3d<T>::operator-(Vector3d<T> &vector) const {
+  return Vector3d(x_ - vector.x_, y_ - vector.y_, z_ - vector.z_);
+}
+
 template <typename T> const T Vector3d<T>::get_x() const { return x_; }
 template <typename T> const T Vector3d<T>::get_y() const { return y_; }
 template <typename T> const T Vector3d<T>::get_z() const { return z_; }

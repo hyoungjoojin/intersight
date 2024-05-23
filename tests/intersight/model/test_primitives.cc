@@ -48,6 +48,26 @@ TEST(Vector3d, all_args_constructor_long_double) {
   EXPECT_NEAR(vector.get_z(), 3.5, ABS_ERROR);
 }
 
+TEST(Vector3d, operator_add) {
+  Vector3d<float> vector_lhs(1.1, 2.2, 3.3);
+  Vector3d<float> vector_rhs(2.2, 3.3, 4.4);
+  Vector3d<float> vector_result = vector_lhs + vector_rhs;
+
+  EXPECT_NEAR(vector_result.get_x(), 3.3, ABS_ERROR);
+  EXPECT_NEAR(vector_result.get_y(), 5.5, ABS_ERROR);
+  EXPECT_NEAR(vector_result.get_z(), 7.7, ABS_ERROR);
+}
+
+TEST(Vector3d, operator_subtract) {
+  Vector3d<float> vector_lhs(2.2, 3.3, 4.4);
+  Vector3d<float> vector_rhs(1.1, 2.2, 3.3);
+  Vector3d<float> vector_result = vector_lhs - vector_rhs;
+
+  EXPECT_NEAR(vector_result.get_x(), 1.1, ABS_ERROR);
+  EXPECT_NEAR(vector_result.get_y(), 1.1, ABS_ERROR);
+  EXPECT_NEAR(vector_result.get_z(), 1.1, ABS_ERROR);
+}
+
 TEST(Vector3d, setter) {
   Vector3d<float> vector;
   vector.set_x(1.1);
