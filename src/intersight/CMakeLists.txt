@@ -1,4 +1,4 @@
-set(MODEL_SOURCES ./model/primitives.cc)
+set(MODEL_SOURCES ./model/primitives.cc ./model/mesh.cc)
 
 target_sources(${LIBRARY_NAME} PRIVATE ${MODEL_SOURCES})
 
