@@ -68,6 +68,34 @@ TEST(Vector3d, operator_subtract) {
   EXPECT_NEAR(vector_result.get_z(), 1.1, ABS_ERROR);
 }
 
+TEST(Vector3d, operator_multiply) {
+  Vector3d<float> vector_lhs(1.1, 1.1, 1.1);
+  float rhs = 2;
+  Vector3d<float> vector_result = vector_lhs * rhs;
+
+  EXPECT_NEAR(vector_result.get_x(), 2.2, ABS_ERROR);
+  EXPECT_NEAR(vector_result.get_y(), 2.2, ABS_ERROR);
+  EXPECT_NEAR(vector_result.get_z(), 2.2, ABS_ERROR);
+}
+
+TEST(Vector3d, operator_divide) {
+  Vector3d<float> vector_lhs(1.1, 1.1, 1.1);
+  float rhs = 2;
+  Vector3d<float> vector_result = vector_lhs / rhs;
+
+  EXPECT_NEAR(vector_result.get_x(), 0.55, ABS_ERROR);
+  EXPECT_NEAR(vector_result.get_y(), 0.55, ABS_ERROR);
+  EXPECT_NEAR(vector_result.get_z(), 0.55, ABS_ERROR);
+}
+
+TEST(Vector3d, operator_inner_product) {
+  Vector3d<float> vector_lhs(1, 2, 3);
+  Vector3d<float> vector_rhs(4, 5, 6);
+  float result = vector_lhs * vector_rhs;
+
+  EXPECT_NEAR(result, 32, ABS_ERROR);
+}
+
 TEST(Vector3d, setter) {
   Vector3d<float> vector;
   vector.set_x(1.1);

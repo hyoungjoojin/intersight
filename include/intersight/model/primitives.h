@@ -11,8 +11,12 @@ public:
   Vector3d();
   Vector3d(T, T, T);
 
-  Vector3d<T> operator+(Vector3d<T> &) const;
-  Vector3d<T> operator-(Vector3d<T> &) const;
+  Vector3d<T> operator+(const Vector3d<T> &) const;
+  Vector3d<T> operator-(const Vector3d<T> &) const;
+  Vector3d<T> operator*(const T) const;
+  Vector3d<T> operator/(const T) const;
+
+  T operator*(const Vector3d<T> &) const;
 
   const T get_x() const;
   const T get_y() const;
