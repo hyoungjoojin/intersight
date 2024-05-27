@@ -6,6 +6,22 @@
 
 namespace intersight {
 
+template <typename T> class Vector2d {
+public:
+  Vector2d();
+  Vector2d(T, T);
+
+  Vector2d<T> operator+(const Vector2d<T> &) const;
+  Vector2d<T> operator*(const T) const;
+
+  const T get_x() const;
+  const T get_y() const;
+
+private:
+  T x_;
+  T y_;
+};
+
 template <typename T> class Vector3d {
 public:
   Vector3d();

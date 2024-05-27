@@ -2,6 +2,26 @@
 
 using namespace intersight;
 
+template <typename T> Vector2d<T>::Vector2d() : x_(0), y_(0) {}
+
+template <typename T> Vector2d<T>::Vector2d(T x, T y) : x_(x), y_(y) {}
+
+template <typename T>
+Vector2d<T> Vector2d<T>::operator+(const Vector2d<T> &vector) const {
+  return Vector2d(x_ + vector.x_, y_ + vector.y_);
+}
+
+template <typename T> Vector2d<T> Vector2d<T>::operator*(const T scalar) const {
+  return Vector2d(scalar * x_, scalar * y_);
+}
+
+template <typename T> const T Vector2d<T>::get_x() const { return x_; }
+template <typename T> const T Vector2d<T>::get_y() const { return y_; }
+
+template class intersight::Vector2d<float>;
+template class intersight::Vector2d<double>;
+template class intersight::Vector2d<long double>;
+
 template <typename T> Vector3d<T>::Vector3d() : x_(0), y_(0), z_(0) {}
 
 template <typename T>
