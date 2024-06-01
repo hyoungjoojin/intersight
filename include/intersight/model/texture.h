@@ -9,8 +9,11 @@ template <typename T> class Texture2d {
 public:
   Texture2d();
   Texture2d(int, int);
+  Texture2d(const std::vector<std::vector<T>> &);
 
   void add_pixel(const Vector2d<T> &);
+
+  const Texture2d<T> normalize() const;
 
   const std::vector<std::vector<T>> &get_pixels() const;
 

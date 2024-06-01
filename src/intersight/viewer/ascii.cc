@@ -1,3 +1,4 @@
+#include "intersight/model/texture.h"
 #include <intersight/viewer/ascii.h>
 #include <iostream>
 
@@ -7,7 +8,9 @@ AsciiViewer::AsciiViewer() {}
 
 template <typename T>
 void AsciiViewer::view(const Texture2d<T> &texture) const {
-  for (const auto &row : texture.get_pixels()) {
+  const Texture2d<T> &normalized_texture = texture.normalize();
+
+  for (const auto &row : normalized_texture.get_pixels()) {
     for (const T value : row)
       std::cout << this->get_character(value);
     std::cout << std::endl;
