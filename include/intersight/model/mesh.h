@@ -1,8 +1,8 @@
 #ifndef INTERSIGHT_MESH_H_
 #define INTERSIGHT_MESH_H_
 
-#include "intersight/model/primitives.h"
-#include <array>
+#include <intersight/model/geometry.h>
+#include <intersight/model/primitives.h>
 #include <string>
 #include <vector>
 namespace intersight {
@@ -15,11 +15,11 @@ public:
   void load_obj(const std::string &);
 
   const std::vector<Vector3d<T>> &get_vertices() const;
-  const std::vector<std::array<unsigned int, 3>> &get_faces() const;
+  const std::vector<Triangle3d> &get_faces() const;
 
 private:
   std::vector<Vector3d<T>> vertices_;
-  std::vector<std::array<unsigned int, 3>> faces_;
+  std::vector<Triangle3d> faces_;
 };
 
 template <typename T>

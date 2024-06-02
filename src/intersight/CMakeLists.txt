@@ -1,4 +1,5 @@
-set(MODEL_SOURCES ./model/primitives.cc ./model/mesh.cc ./model/texture.cc)
+set(MODEL_SOURCES ./model/primitives.cc ./model/mesh.cc ./model/texture.cc
+                  ./model/geometry.cc)
 set(CAMERA_SOURCES ./camera/camera.cc)
 set(VIEWER_SOURCES ./viewer/ascii.cc)
 set(RENDERER_SOURCES ./renderer/renderer.cc)
