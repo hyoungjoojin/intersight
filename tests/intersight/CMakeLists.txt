@@ -1,7 +1,7 @@
 include(GoogleTest)
 
 set(MODEL_TEST_SOURCES ./model/test_primitives.cc ./model/test_mesh.cc
-                       ./model/test_geometry.cc)
+                       ./model/test_geometry.cc ./model/test_matrix.cc)
 
 add_executable(${TESTS_EXECUTABLE_NAME} ${MODEL_TEST_SOURCES})
 
