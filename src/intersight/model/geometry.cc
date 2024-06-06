@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string>
 #include <tuple>
-#include <utility>
 
 using namespace intersight;
 
