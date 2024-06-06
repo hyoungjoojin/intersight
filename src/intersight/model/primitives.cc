@@ -53,6 +53,12 @@ Vector3d<T> Vector3d<T>::operator-(const Vector3d<T> &vector) const {
   return Vector3d(x_ - vector.x_, y_ - vector.y_, z_ - vector.z_);
 }
 
+template <typename T> void Vector3d<T>::operator-=(const Vector3d<T> &vector) {
+  x_ -= vector.x_;
+  y_ -= vector.y_;
+  z_ -= vector.z_;
+}
+
 template <typename T> Vector3d<T> Vector3d<T>::operator*(const T scalar) const {
   return Vector3d(scalar * x_, scalar * y_, scalar * z_);
 }
@@ -70,6 +76,12 @@ template <typename T> void Vector3d<T>::operator*=(const T value) {
 
 template <typename T> Vector3d<T> Vector3d<T>::operator/(const T scalar) const {
   return Vector3d(x_ / scalar, y_ / scalar, z_ / scalar);
+}
+
+template <typename T> void Vector3d<T>::operator/=(const T scalar) {
+  x_ /= scalar;
+  y_ /= scalar;
+  z_ /= scalar;
 }
 
 template <typename T> const T Vector3d<T>::get_x() const { return x_; }

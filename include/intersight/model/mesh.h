@@ -10,7 +10,7 @@ namespace intersight {
 template <typename T> class Mesh3d {
 public:
   Mesh3d();
-  Mesh3d(const std::string &);
+  Mesh3d(const std::string &, bool normalize = true);
 
   void load_obj(const std::string &);
 
@@ -20,6 +20,8 @@ public:
 private:
   std::vector<Vector3d<T>> vertices_;
   std::vector<Triangle3d> faces_;
+
+  void normalize_();
 };
 
 template <typename T>
